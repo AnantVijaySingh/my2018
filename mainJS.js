@@ -9,7 +9,7 @@ var goals = ["No binge watching",
 	"Travel to one new country",
 	"Maintain a prioritized to-do list"]
 
-var goalsObj = []
+var goalsObj = new Array();
 
 window.onload = init;
 
