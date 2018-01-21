@@ -1,3 +1,5 @@
+// Global Variables
+
 var goals = ["No binge watching", 
 	"Cut sugar by 25%", 
 	"Get Fit",
@@ -7,15 +9,20 @@ var goals = ["No binge watching",
 	"365 hours of study",
 	"Musical instrument",
 	"Travel to one new country",
-	"Maintain a prioritized to-do list"]
-
+	"Maintain a prioritized to-do list"];
 var goalsObj = new Array();
 
+// Initialization Functions
 window.onload = init;
-
 function init() {
 	createGoalsObjects();
 	createGoalsList();
+	
+	var SwitchUIBtn = document.getElementById("SwitchUIBtn");
+	var CommentBtn = document.getElementById("CommentBtn")
+	SwitchUIBtn.onclick = handleSwitchUIBtnClick;
+	CommentBtn.onclick = handleCommentBtnClick;
+	var CommentField = document.getElementById("CommentField");
 };
 
 function createGoalsList() {
@@ -28,12 +35,28 @@ function createGoalsList() {
 function createGoalsObjects() {
 	for (var i = 0; i < goals.length; i++) {
 		goalsObj[i] = {
-			id: i+1,
+			id: i,
 			goal: goals[i],
-			goalType: 
-			goalRemaining: 
-			status:
+			goalType: undefined,
+			status: undefined
 		};
 		console.log(goalsObj[i]);
 	};
 };
+
+
+function handleSwitchUIBtnClick() {
+	alert("Change UI");
+};
+
+
+
+
+
+// DOM Functions
+
+// Processing Settings
+function handleCommentBtnClick() {
+	commentData = CommentField.value;
+	alert(commentData);
+}

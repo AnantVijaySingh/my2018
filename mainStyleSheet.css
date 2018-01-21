@@ -10,6 +10,39 @@
 	text-align: center;
 }
 
+.settingsDiv {
+	float: right;
+	clear: left;
+	height: 100vh;
+}
+
+.button {
+	background-color: #00796B;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	margin: 10px;
+	vertical-align: center;
+}
+
+.textField {
+	display: block;
+	width: 106px;
+	border: none;
+	border-bottom: solid 1px;
+	border-bottom-color: rgba(0,0,0,0.12);
+	padding:4px 0;
+	text-align: left;
+}
+
+.textField-label {
+	color: rgba(0,0,0,0.26);
+	position: absolute;
+	text-align: left;
+	display: block;
+	position: absolute;
+}
+
 ul {
 	list-style: none;
 	padding: 0px;
@@ -23,4 +56,9 @@ ul div {
 	width: 30%;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.footer div{
+	margin: auto;
+	text-align: center;
 }
