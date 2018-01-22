@@ -18,6 +18,7 @@ function init() {
 	createGoalsObjects();
 	createGoalsList();
 	
+	
 	var SwitchUIBtn = document.getElementById("SwitchUIBtn");
 	var CommentBtn = document.getElementById("CommentBtn")
 	SwitchUIBtn.onclick = handleSwitchUIBtnClick;
@@ -26,9 +27,12 @@ function init() {
 };
 
 function createGoalsList() {
+	var listDiv = document.getElementById("listDivId")
+
 	for (var i = 0; i < goals.length; i++) {
-		var mainDiv = document.getElementById("listDivId");
-		mainDiv.innerHTML = goals[i];
+		var goalDiv = document.createElement("div");
+		goalDiv.innerHTML = goals[i];
+		listDiv.appendChild(goalDiv);
 	};
 };
 

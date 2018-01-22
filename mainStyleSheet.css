@@ -43,19 +43,9 @@
 	position: absolute;
 }
 
-ul {
-	list-style: none;
-	padding: 0px;
+.listDiv {
 	text-align: center;
-}
-
-ul div {
-	border: 1px solid black;
-	margin: 5px;
-	height: 50px;
-	width: 30%;
-	margin-right: auto;
-	margin-left: auto;
+	align-content: center;
 }
 
 .footer div{
