@@ -13,11 +13,9 @@ var goals = ["No binge watching",
 var goalsObj = new Array();
 
 // Initialization Functions
-window.onload = init;
-function init() {
+window.onload = function init() {
 	createGoalsObjects();
 	createGoalsList();
-	
 	
 	var SwitchUIBtn = document.getElementById("SwitchUIBtn");
 	var CommentBtn = document.getElementById("CommentBtn")
@@ -25,6 +23,19 @@ function init() {
 	CommentBtn.onclick = handleCommentBtnClick;
 	var CommentField = document.getElementById("CommentField");
 };
+
+
+// var goalBoxHTML = function (id,goal) {
+// 	return '<div id=${id} class="goalBox">
+// 				<div>
+// 					<p>${goal}</p>
+// 				</div>
+// 				<div>
+// 					<span>Status</span><span id="${id}-status"></span>
+// 				</div>
+// 			</div>'
+// }
+
 
 function createGoalsList() {
 	var listDiv = document.getElementById("listDivId")
@@ -41,8 +52,8 @@ function createGoalsObjects() {
 		goalsObj[i] = {
 			id: i,
 			goal: goals[i],
-			goalType: undefined,
-			status: undefined
+			type: getGoalType(i),
+			status: getGoalStatus(i)
 		};
 		console.log(goalsObj[i]);
 	};
@@ -53,7 +64,13 @@ function handleSwitchUIBtnClick() {
 	alert("Change UI");
 };
 
+function getGoalType (id) {
+	return "type"
+};
 
+function getGoalStatus (id) {
+	return "status"
+};
 
 
 
