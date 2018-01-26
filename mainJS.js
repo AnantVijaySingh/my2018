@@ -19,10 +19,11 @@ var goals = ["No binge watching",
 	"Travel to one new country",
 	"Maintain a prioritized to-do list"];
 var goalsObj = new Array();
+var time = new Date().getTime();
 
 // Initialization Functions
 window.onload = function init() {
-	createGoalsObjects();
+	createGoalsObjects(goals);
 	createGoalsList();
 	
 	var SwitchUIBtn = document.getElementById("SwitchUIBtn");
@@ -55,13 +56,29 @@ function createGoalsList() {
 	};
 };
 
+// this is a constructure used to create objects
+function CreateGoalsObj(goalText,id) {
+	this.id = id;
+	this.goalText = goal;
+	this.type = getGoalType(id);
+	this.stats = getGoalStatus(id);
+	// this.modifyGoal = function () {};
+	// goalRemaining: function () {};
+};
+
+var goalsObj[i] = new CreateGoalsObj[goals[i],i];
+
+
+
 function createGoalsObjects() {
 	for (var i = 0; i < goals.length; i++) {
 		goalsObj[i] = {
 			id: i,
-			goal: goals[i],
+			goalText: goals[i],
 			type: getGoalType(i),
 			status: getGoalStatus(i)
+			// modifyGoal: function () { this.goal = getNewGoal(id) }
+			// goalRemaining: function () {code to calcualte the remainig goal}
 		};
 		// console.log(goalsObj[1]);
 	};
