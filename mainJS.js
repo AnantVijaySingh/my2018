@@ -34,16 +34,16 @@ window.onload = function init() {
 };
 
 
-// var goalBoxHTML = function (id,goal) {
-// 	return '<div id=${id} class="goalBox">
-// 				<div>
-// 					<p>${goal}</p>
-// 				</div>
-// 				<div>
-// 					<span>Status</span><span id="${id}-status"></span>
-// 				</div>
-// 			</div>'
-// }
+var goalBoxHTML = function (id,goal) {
+	return `<div id=${id} class="goalBox">
+				<div>
+					<p>${goal}</p>
+				</div>
+				<div>
+					<span>Status</span><span id="${id}-status"></span>
+				</div>
+			</div>`;
+}
 
 
 function createGoalsList() {
@@ -62,6 +62,7 @@ function CreateGoalsObj(goalText,id) {
 	this.goalText = goal;
 	this.type = getGoalType(id);
 	this.stats = getGoalStatus(id);
+	this.goalElement = goalBoxHTML(id,goalText);
 	// this.modifyGoal = function () {};
 	// goalRemaining: function () {};
 };
@@ -120,3 +121,28 @@ function handleCommentBtnClick() {
 	commentData = CommentField.value;
 	alert(commentData);
 }
+
+
+
+
+
+
+// function getFullscreenContent (content){
+// 	return `
+// 		<div class='light-box'></div>
+// 		<div class='close-btn'>
+// 			<img src="${chrome.runtime.getURL('./images/close.png')}" />
+// 		</div>
+// 		<div class="content-wrapper">
+// 			${content}
+// 		</div>
+// 	`;
+// }
+
+// function generateFullScreenElement(content) {
+// 	const newElement = document.createElement('div');
+// 	newElement.id = 'fullscreen-wapper';
+// 	newElement.innerHTML = getFullscreenContent(content);
+// 	newElement.querySelector('.close-btn').onclick = hideFullScreen;
+// 	return newElement
+// }
