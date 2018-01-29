@@ -23,7 +23,7 @@ var time = new Date().getTime();
 
 // Initialization Functions
 window.onload = function init() {
-	createGoalsObjects(goals);
+	// createGoalsObjects(goals);
 	createGoalsList();
 	
 	var SwitchUIBtn = document.getElementById("SwitchUIBtn");
@@ -50,8 +50,13 @@ function createGoalsList() {
 	var listDiv = document.getElementById("listDivId")
 
 	for (var i = 0; i < goals.length; i++) {
+		goalsObj.push(new CreateGoalsObj(goals[i],i));
+		console.log(goalsObj[i]);
+
 		var goalDiv = document.createElement("div");
-		goalDiv.innerHTML = goals[i];
+		goalDiv.setAttribute("id",goalsObj[i].id);
+		goalDiv.setAttribute("class","goalBox");
+		goalDiv.innerHTML = goalsObj[i].goalElement;
 		listDiv.appendChild(goalDiv);
 	};
 };
@@ -59,33 +64,32 @@ function createGoalsList() {
 // this is a constructure used to create objects
 function CreateGoalsObj(goalText,id) {
 	this.id = id;
-	this.goalText = goal;
+	this.goalText = goalText;
 	this.type = getGoalType(id);
-	this.stats = getGoalStatus(id);
+	this.status = getGoalStatus(id);
 	this.goalElement = goalBoxHTML(id,goalText);
 	// this.modifyGoal = function () {};
 	// goalRemaining: function () {};
 };
 
-var goalsObj[i] = new CreateGoalsObj[goals[i],i];
+// var goalsObj[i] = new CreateGoalsObj[goals[i],i];
 
 
 
-function createGoalsObjects() {
-	for (var i = 0; i < goals.length; i++) {
-		goalsObj[i] = {
-			id: i,
-			goalText: goals[i],
-			type: getGoalType(i),
-			status: getGoalStatus(i)
-			// modifyGoal: function () { this.goal = getNewGoal(id) }
-			// goalRemaining: function () {code to calcualte the remainig goal}
-		};
-		// console.log(goalsObj[1]);
-	};
-	console.log(goalsObj[2].goal);
-	createGoalsDivBoxes();
-};
+// function createGoalsObjects() {
+// 	for (var i = 0; i < goals.length; i++) {
+// 		goalsObj[i] = {
+// 			id: i,
+// 			goalText: goals[i],
+// 			type: getGoalType(i),
+// 			status: getGoalStatus(i)
+// 			// modifyGoal: function () { this.goal = getNewGoal(id) }
+// 			// goalRemaining: function () {code to calcualte the remainig goal}
+// 		};
+// 		// console.log(goalsObj[1]);
+// 	};
+// 	createGoalsDivBoxes();
+// };
 
 
 function handleSwitchUIBtnClick() {
@@ -104,14 +108,14 @@ function getGoalStatus (id) {
 
 
 // Iterate over the object and add the values to the goals div boxes
-function createGoalsDivBoxes() {
-	goalsObj.forEach( function(element, index) {
-		function injectGoalDivBoxes
-		for (property in element) {
-			console.log(element[property]);
-		}
-	});
-}
+// function createGoalsDivBoxes() {
+// 	goalsObj.forEach( function(element, index) {
+// 		function injectGoalDivBoxes
+// 		for (property in element) {
+// 			console.log(element[property]);
+// 		}
+// 	});
+// }
 
 
 // DOM Functions
