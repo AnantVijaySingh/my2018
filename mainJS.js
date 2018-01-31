@@ -37,10 +37,10 @@ window.onload = function init() {
 
 var goalBoxHTML = function (id,goal) {
 	return `<div id=${id} class="goalBox">
-				<div>
+				<div class="goalBoxTopDiv">
 					<p>${goal}</p>
 				</div>
-				<div>
+				<div class="goalBoxBottomDiv">
 					<span>Status</span><span id="${id}-status"></span>
 				</div>
 			</div>`;
