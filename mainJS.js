@@ -32,6 +32,7 @@ window.onload = function init() {
 	CommentBtn.onclick = handleCommentBtnClick;
 	var CommentField = document.getElementById("CommentField");
 	getLocation();
+	getData();
 };
 
 
