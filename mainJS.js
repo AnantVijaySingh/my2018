@@ -60,6 +60,7 @@ function createGoalsList() {
 		goalDiv.innerHTML = goalsObj[i].goalElement;
 		listDiv.appendChild(goalDiv);
 	};
+	console.log(JSON.stringify(goalsObj))
 };
 
 // this is a constructure used to create objects
@@ -72,25 +73,6 @@ function CreateGoalsObj(goalText,id) {
 	// this.modifyGoal = function () {};
 	// goalRemaining: function () {};
 };
-
-// var goalsObj[i] = new CreateGoalsObj[goals[i],i];
-
-
-
-// function createGoalsObjects() {
-// 	for (var i = 0; i < goals.length; i++) {
-// 		goalsObj[i] = {
-// 			id: i,
-// 			goalText: goals[i],
-// 			type: getGoalType(i),
-// 			status: getGoalStatus(i)
-// 			// modifyGoal: function () { this.goal = getNewGoal(id) }
-// 			// goalRemaining: function () {code to calcualte the remainig goal}
-// 		};
-// 		// console.log(goalsObj[1]);
-// 	};
-// 	createGoalsDivBoxes();
-// };
 
 
 function handleSwitchUIBtnClick() {
@@ -106,17 +88,6 @@ function getGoalStatus (id) {
 };
 
 
-
-
-// Iterate over the object and add the values to the goals div boxes
-// function createGoalsDivBoxes() {
-// 	goalsObj.forEach( function(element, index) {
-// 		function injectGoalDivBoxes
-// 		for (property in element) {
-// 			console.log(element[property]);
-// 		}
-// 	});
-// }
 
 
 // DOM Functions
