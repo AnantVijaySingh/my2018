@@ -6,6 +6,7 @@
 	<script src="mainJS.js"></script>
 	<script src="location.js"></script>
 	<script src="practice.js"></script>
+	<script src="practice_1.js"></script>
 	<link rel="stylesheet" href="mainStyleSheet.css">
 </head>
 <body>
@@ -17,6 +18,28 @@
 	</div>
 	<div class="listDiv" id="listDivId">
 	</div>
+	<!-- Practice Canvas -->
+	<div>
+		<canvas id="canvasElement" height="200px" width="600px" style="border: 1px solid black" ></canvas>
+		<form style="float: right;">
+			<p>
+				<label for="shape">Select Shape</label>
+				<select id="shape">
+					<option value="none" selected="selected">None</option>
+					<option value="square">Square</option>
+					<option value="circle">Circle</option>
+				</select>
+			</p>
+			<p>
+				<label for="tweet">Tweet</label>
+				<select id="tweet"></select>
+			</p>
+			<p>
+				<input type="button" id="previewBtn" value="Preview">
+			</p>
+		</form>
+	</div>
+	<!-- Practice module end -->
 	<div class="footer">
 		<label class="textField-label" for="CommentField">Comments</label>
 		<input class="textField" type="text" name="commentField" id="CommentField">

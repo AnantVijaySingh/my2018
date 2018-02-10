@@ -31,8 +31,11 @@ window.onload = function init() {
 	SwitchUIBtn.onclick = handleSwitchUIBtnClick;
 	CommentBtn.onclick = handleCommentBtnClick;
 	var CommentField = document.getElementById("CommentField");
-	getLocation();
-	getData();
+
+	// Practice Section
+	// getLocation();
+	// getData();
+	canvasFunction();
 };
 
 
