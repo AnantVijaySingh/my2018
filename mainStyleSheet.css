@@ -71,3 +71,12 @@
 .goalBoxBottomDiv {
 	width: 100%;
 }
+
+#videoDiv .videoButton {
+	background-color: #B0BEC5;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	margin: 10px;
+	vertical-align: center;
+}
