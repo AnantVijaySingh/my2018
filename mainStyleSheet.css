@@ -72,11 +72,29 @@
 	width: 100%;
 }
 
-#videoDiv .videoButton {
+.videoButton {
 	background-color: #B0BEC5;
-	border: none;
+	border: 2px solid black;
 	color: white;
-	padding: 10px 20px;
-	margin: 10px;
+	text-align: center;
+	margin: 0 auto;
+	height: 40px;
+	width: 100px;
 	vertical-align: center;
+	color: #000000;
+	font-weight: bold;
+}
+
+#videoDiv .selected {
+	background-color: #263238;
+	color: #ffffff;
+}
+
+#videoDiv .unselected {
+	background-color: #ffffff;
+}
+
+#videoDiv .unselected:hover {
+	background-color: #37474F;
+	color: #ffffff;
 }

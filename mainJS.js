@@ -36,6 +36,7 @@ window.onload = function init() {
 	// getLocation();
 	// getData();
 	canvasFunction();
+	videoPage();
 };
 
 
