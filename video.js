@@ -1,46 +1,49 @@
 var playlist = ["assets/NikeFindYourGreatness.mp4",""]
 var pos = 0;
+var videoPaused = false;
+var videoPlaying = false;
 
 window.onload = function () {
-	console.log("video js");
-	var controlBtns = document.querySelectorAll("button.videoButton");
-	console.log(controlBtns);
+	var controlBtns = document.querySelectorAll(".videoBtns button");
+	var video =  document.getElementById("video");
+
 	for(var i = 0, length1 = controlBtns.length; i < length1; i++){
-		console.log(controlBtns[i]);
 		controlBtns[i].addEventListener("click", handleControlBtn, false);
 	}
+	// video.addEventListener("ended",playAgain,false);
 }
 
 function handleControlBtn (e) {
 	var id = e.target.getAttribute("id");
-	console.log(id);
-	var video =  document.getElementById("video");
 
 	if (id=="playBtn") {
 		pushUnpushBtn("playBtn","pauseBtn");
-		console.log('step 2');
 		playVideo(video);
 	} else if (id=="pauseBtn") {
 		pushUnpushBtn("pauseBtn","playBtn");
 		video.pause();
-		console.log("video paused" + video.paused);
+		if (videoPlaying) {
+		videoPaused = true;
+		}
 	} else {
 		// statement
 	}
 }
 
 function pushUnpushBtn(idToPush,idToUnpush) {
-
+	var push = document.getElementById(idToPush);
+	var unpush = document.getElementById(idToUnpush);
+	push.setAttribute("class","selected");
+	unpush.setAttribute("class","unselected");
 }
 
 function playVideo (video) {
-	if (video.src in playlist === true) {
-		console.log(video.src in playlist);
+	if (videoPaused) {
 		video.play();
 	} else {
-		console.log("ELSE"+ video.src in playlist);
 		video.src = playlist[pos];
 		video.load();
 		video.play();
+		videoPlaying = true;
 	}
 }
