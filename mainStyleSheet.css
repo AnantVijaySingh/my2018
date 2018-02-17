@@ -79,7 +79,7 @@
 	text-align: center;
 	margin: 0 auto;
 	height: 40px;
-	width: 100px;
+	width: 140px;
 	vertical-align: center;
 	color: #000000;
 	font-weight: bold;
@@ -97,4 +97,16 @@
 #videoDiv .unselected:hover {
 	background-color: #37474F;
 	color: #ffffff;
+}
+
+#videoDiv {
+	position: relative;
+	width: 720px;
+	height: 420px;
+}
+
+#videoDiv canvas {
+	position: absolute;
+	top: 0px;
+	left: 0px;
 }
