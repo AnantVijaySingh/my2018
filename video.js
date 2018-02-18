@@ -32,6 +32,7 @@ function handleControlBtn (e) {
 		effectFunction = null;
 	} else if (id=="bw") {
 		effectFunction = noir;
+		processFrame();
 	}
 }
 
@@ -73,14 +74,13 @@ function processFrame() {
 		var r = frame.data[i*4 + 0];
 		var g = frame.data[i*4 + 1];
 		var b = frame.data[i*4 + 2];
-		if (effectFunction) {
+		if (effectFunction != null) {
 			effectFunction(i,r,g,b,frame.data);
 		}
 	}
 	display.putImageData(frame,0,0);
+	setTimeout(processFrame,0);
 }
-
-setTimeout(processFrame,0);
 
 function noir(pos,r,g,b,data) {
 	var brightness = (3*r+4*g+b) >>> 3;
