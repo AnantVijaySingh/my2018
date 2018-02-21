@@ -13,6 +13,13 @@ function clearLocalStorage () {
 function loadNotesFromLocalStorage() {
 	if (localStorage.getItem("notesArray")) {
 		console.log('Notes Found');
+		var notesArray_1 = localStorage.getItem("notesArray");
+		console.log(notesArray_1);
+		var notesArrayParsed = JSON.parse(notesArray_1);
+		// var notesArray = JSON.parse(localStorage.getItem("notesArray"));
+		for(var i = 0; i < notesArrayParsed.length; i++){
+			createNoteInDOM(notesArrayParsed[i]);
+		}
 	} else {
 		console.log('No Notes Found');
 	}
@@ -32,6 +39,10 @@ function addNote() {
 	};
 	if (localStorage.getItem("notesArray")) {
 		console.log('Array Found');
+		console.log(localStorage.getItem("notesArray"));
+		var notesArray = JSON.parse(localStorage.getItem("notesArray"));
+		notesArray.push(noteObj);
+		localStorage.setItem("notesArray", JSON.stringify(notesArray));
 	} else {
 		console.log('Create Array and add');
 		var notesArray = [noteObj]; 
@@ -39,14 +50,13 @@ function addNote() {
 		localStorage.setItem("notesArray", JSON.stringify(notesArray));
 	}
 
-	createNoteInDOM(JSON.stringify(noteObj));
+	createNoteInDOM(noteObj);
 }
 
-function createNoteInDOM(note) {
+function createNoteInDOM(noteObj) {
 	var noteList = document.getElementById("noteList");
 	var noteDiv = document.createElement("div");
 	var notePara = document.createElement("p");
-	var noteObj = JSON.parse(note);
 
 	notePara.innerHTML = noteObj.text;
 	noteDiv.setAttribute("class",noteObj.color);
