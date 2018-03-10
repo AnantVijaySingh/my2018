@@ -35,8 +35,6 @@ function addNote() {
 		color: noteColor
 	};
 	if (localStorage.getItem("notesArray")) {
-		console.log('Array Found');
-		console.log(localStorage.getItem("notesArray"));
 		var notesArray = JSON.parse(localStorage.getItem("notesArray"));
 		notesArray.push(noteObj);
 		localStorage.setItem("notesArray", JSON.stringify(notesArray));
