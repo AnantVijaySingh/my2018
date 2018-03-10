@@ -12,11 +12,8 @@ function clearLocalStorage () {
 
 function loadNotesFromLocalStorage() {
 	if (localStorage.getItem("notesArray")) {
-		console.log('Notes Found');
 		var notesArray_1 = localStorage.getItem("notesArray");
-		console.log(notesArray_1);
 		var notesArrayParsed = JSON.parse(notesArray_1);
-		// var notesArray = JSON.parse(localStorage.getItem("notesArray"));
 		for(var i = 0; i < notesArrayParsed.length; i++){
 			createNoteInDOM(notesArrayParsed[i]);
 		}
@@ -46,7 +43,6 @@ function addNote() {
 	} else {
 		console.log('Create Array and add');
 		var notesArray = [noteObj]; 
-		// var notesArray = JSON.stringify(notesArray);
 		localStorage.setItem("notesArray", JSON.stringify(notesArray));
 	}
 
